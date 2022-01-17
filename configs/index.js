@@ -1,5 +1,5 @@
 const config = {
-  port: 3000,
+  port: process.env.PORT || 8080,
   googleAPIKey: "AIzaSyAuM4lYkeVpw2TDzdM5BaPFsol5qIVrGoM",
 };
 
