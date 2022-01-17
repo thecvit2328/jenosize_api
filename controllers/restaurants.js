@@ -12,7 +12,7 @@ const search = async (req, res) => {
 
   try {
     const findPlace = await services.findPlaceByGGM(req.query.search);
-    res.status(200).send(findPlace);
+    res.status(200).send(JSON.parse(findPlace));
   } catch (error) {
     console.log(error);
     const { status, data } = error?.response;
