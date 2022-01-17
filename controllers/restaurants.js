@@ -14,6 +14,7 @@ const search = async (req, res) => {
     const findPlace = await services.findPlaceByGGM(req.query.search);
     res.status(200).send(findPlace);
   } catch (error) {
+    console.log(error);
     const { status, data } = error?.response;
     res.status(status).send(data);
   }

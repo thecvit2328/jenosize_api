@@ -1,20 +1,21 @@
 const { Client } = require("@googlemaps/google-maps-services-js");
 const client = new Client({});
+const { googleAPIKey } = require("../configs");
 
-const findPlaceByGGM = (text) =>
+const findPlaceByGGM = (keyword) =>
   new Promise((resolve, reject) => {
     client
-      .placeQueryAutocomplete({
+      .placesNearby({
         params: {
-          input: `ร้าน ${text}`,
-          location: ["13.7563", "100.5018"],
-          language: "th",
+          location: "13.764807,100.538288",
           radius: 100000,
-          key: config.googleAPIKey,
+          keyword,
+          type: "restaurant",
+          key: googleAPIKey,
         },
       })
       .then((r) => {
-        resolve(JSON.stringify(r.data.predictions));
+        resolve(JSON.stringify(r.data.results));
       })
       .catch((e) => {
         reject(e);
