@@ -32,3 +32,13 @@ curl --location --request POST 'http://[YourHostName]:3000/api/game/twentyfour' 
     "numberD": [integer 1 - 9]
 }'
 ```
+
+3. XO AI API 
+```
+curl --location --request POST 'https://jenozise.herokuapp.com/api/game/xo' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "newBoard": ["o","o",2,3,"x",5,6,7,"x"],
+    "player": "o"
+}'
+```
