@@ -9,7 +9,7 @@ First install packages
 npm install
 ```
 
-Second runnig api 
+Second running api 
 ```bash
 npm start
 ```
@@ -18,12 +18,12 @@ npm start
 
 1. Find Restaurant API
 ```
-curl --location --request GET 'http://[YourHostName]:3000/api/search/?search=[TextInput]'
+curl --location --request GET 'https://jenozise.herokuapp.com/api/search/?search=[TextInput]'
 ```
 
 2. 24Game API
 ```
-curl --location --request POST 'http://[YourHostName]:3000/api/game/twentyfour' \
+curl --location --request POST 'https://jenozise.herokuapp.com/api/game/twentyfour' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "numberA": [integer 1 - 9],
